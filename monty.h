@@ -41,6 +41,8 @@ stack_t *_push(stack_t **h, char **amount, unsigned int nl);
 void _pall(stack_t **h, unsigned int nl);
 int _retexfail(void);
 int _errfile(char *argv1);
+int _errinst(unsigned int nl, char *oper);
+void _pint(stack_t **h, unsigned int nl);
 
 
 #endif

@@ -33,7 +33,9 @@ void _read(char *arg1)
 			int j;
 			instruction_t inst[] = {
 				{"pall", _pall},
-				{"NULL", NULL}			};
+				{"pint", _pint},
+				{"NULL", NULL}
+			};
 			oper = strtok(operator, "\n ");
 			for (j = 0; inst[j].opcode; j++)
 			{
@@ -42,7 +44,5 @@ void _read(char *arg1)
 					inst[j].f(&h, nl);
 					break;				}
 				if (strncmp("NULL", inst[j] .opcode, 4) == 0)
-				{
-					printf("L%u: unknown instruction %s\n", nl, oper);
-					_retexfail();				}}}
+					_errinst(nl, oper);		}}
 		nl++;	}}
