@@ -8,7 +8,8 @@
  * @file: file
  * Return: Nothing
  */
-void _free(stack_t **h, char **linestr, char **amount, char **argv1, FILE **file)
+void _free(stack_t **h, char **linestr, char **amount
+		, char **argv1, FILE **file)
 {
 	stack_t *temp;
 
