@@ -9,12 +9,11 @@ void _read(char *arg1)
 	size_t line = 0;
 	ssize_t m;
 	unsigned int nl = 1;
-	char *linestr, *operator, *amount, *argv1;
+	char *linestr, *operator, *amount, *argv1, *oper;
 	FILE *file;
-	stack_t *h = NULL, *temp;
+	stack_t *h = NULL;
 
 	argv1 = strdup(arg1);
-
 	file = fopen(argv1, "r");
 	while ((m = getline(&linestr, &line, file)) != -1)
 	{
@@ -31,13 +30,18 @@ void _read(char *arg1)
 		}
 		else
 		{
-			temp = h;
-			while (temp->prev != NULL)
+			int j;
+			instruction_t inst[] = {
+				{"pall", _pall},
+				{NULL, NULL}
+			};
+			oper = strtok(operator, "\n ");
+			for (j = 0; inst[j].opcode; j++)
 			{
-				printf("%d\n", temp->n);
-				temp = temp->prev;
+				if (strcmp(oper, inst[j].opcode) == 0)
+					inst[j].f(&h, nl);
+				return;
 			}
-			printf("%d\n", temp->n);
 		}
 		nl++;
 	}
