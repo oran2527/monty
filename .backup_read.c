@@ -11,7 +11,7 @@ void _read(char *arg1)
 	unsigned int nl = 1;
 	char *linestr, *operator, *amount, *argv1;
 	FILE *file;
-	stack_t *h = NULL, *temp;
+	stack_t *h = NULL, *new, *temp;
 
 	argv1 = strdup(arg1);
 
@@ -27,7 +27,25 @@ void _read(char *arg1)
 		amount = strtok(NULL, " \n");
 		if (strcmp(operator, "push") == 0 && amount != NULL)
 		{
-			h = _push(&h, &amount);
+			h = _push(&h, amount);
+			new = malloc(sizeof(stack_t));
+			if (new == NULL)
+				printf("No se asigno memoria");
+
+			new->n = atoi(amount);
+			new->prev = NULL;
+			new->next = NULL;
+
+			if (h == NULL)
+			{
+				h = new;
+			}
+			else
+			{
+				h->next = new;
+				new->prev = h;
+				h = new;
+			}
 		}
 		else
 		{

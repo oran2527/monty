@@ -39,4 +39,6 @@ typedef struct instruction_s
 
 void _read(char *arg1);
 
+stack_t *_push(stack_t **h, char **amount);
+
 #endif
