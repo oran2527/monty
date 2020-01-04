@@ -15,34 +15,42 @@ void _read(char *arg1)
 
 	argv1 = strdup(arg1);
 	file = fopen(argv1, "r");
+	if (file == NULL)
+	{
+		printf("Error: Can't open file %s", arg1);
+		_retexfail();			}
 	while ((m = getline(&linestr, &line, file)) != -1)
 	{
 		operator = strtok(linestr, " ");
 		if (*operator == '\n')
 		{
 			nl++;
-			continue;
-		}
+			continue;		}
 		amount = strtok(NULL, " \n");
 		if (strcmp(operator, "push") == 0 && amount != NULL)
 		{
-			h = _push(&h, &amount);
-		}
+			h = _push(&h, &amount, nl);		}
 		else
 		{
 			int j;
 			instruction_t inst[] = {
 				{"pall", _pall},
-				{NULL, NULL}
-			};
+				{"NULL", NULL}			};
 			oper = strtok(operator, "\n ");
 			for (j = 0; inst[j].opcode; j++)
 			{
 				if (strcmp(oper, inst[j].opcode) == 0)
+				{
 					inst[j].f(&h, nl);
-				return;
-			}
+					break;
+				}
+					
+				if (strncmp("NULL", inst[j] .opcode, 4) == 0)
+				{	
+					printf("L%u: unknown instruction %s\n", nl, oper);
+					_retexfail();
+				}	
+			}				
 		}
-		nl++;
-	}
+		nl++;	}
 }

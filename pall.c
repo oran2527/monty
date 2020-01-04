@@ -10,10 +10,13 @@ void _pall(stack_t **h, unsigned int nl)
 
 	(void)nl;
 	temp = *h;
-	while (temp->prev != NULL)
+	if (temp != NULL)
 	{
+		while (temp->prev != NULL)
+		{
+			printf("%d\n", temp->n);
+			temp = temp->prev;
+		}
 		printf("%d\n", temp->n);
-		temp = temp->prev;
 	}
-	printf("%d\n", temp->n);
 }

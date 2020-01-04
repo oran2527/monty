@@ -38,8 +38,11 @@ typedef struct instruction_s
 
 void _read(char *arg1);
 
-stack_t *_push(stack_t **h, char **amount);
+stack_t *_push(stack_t **h, char **amount, unsigned int nl);
 
 void _pall(stack_t **h, unsigned int nl);
+
+int _retexfail(void);
+
 
 #endif

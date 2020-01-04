@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		_retexfail();
 	}
 	else
 	{
