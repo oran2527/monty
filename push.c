@@ -38,5 +38,5 @@ stack_t *_push(stack_t **h, char **amount, unsigned int nl)
 		new->prev = *h;
 		*h = new;
 		return (*h);
-	}		
+	}
 }
