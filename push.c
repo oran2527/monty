@@ -39,4 +39,5 @@ stack_t *_push(stack_t **h, char **amount, unsigned int nl)
 		*h = new;
 		return (*h);
 	}
+	free(new);
 }

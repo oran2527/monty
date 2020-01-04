@@ -16,7 +16,8 @@ void _pint(stack_t **h, unsigned int nl)
 	}
 	else
 	{
-		printf("L%u: can't pint, stack empty", nl);
+		printf("L%u: can't pint, stack empty\n", nl);
 		_retexfail();
 	}
+	free(t);
 }

@@ -30,10 +30,8 @@ void _read(char *arg1)
 		else
 		{
 			int j;
-			instruction_t inst[] = {
-				{"pall", _pall},
-				{"pint", _pint},
-				{"NULL", NULL}			};
+			instruction_t inst[] = {{"pall", _pall}, {"pint", _pint},
+			{"pop", _pop}, {"NULL", NULL}			};
 			oper = strtok(operator, "\n ");
 			for (j = 0; inst[j].opcode; j++)
 			{
