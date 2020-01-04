@@ -19,4 +19,5 @@ void _pall(stack_t **h, unsigned int nl)
 		}
 		printf("%d\n", temp->n);
 	}
+	free(temp);
 }

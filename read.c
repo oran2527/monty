@@ -2,7 +2,6 @@
 /**
  * _read - function to read file
  * @arg1: argument 1
- * Return: Nothing
  */
 void _read(char *arg1)
 {
@@ -34,8 +33,7 @@ void _read(char *arg1)
 			instruction_t inst[] = {
 				{"pall", _pall},
 				{"pint", _pint},
-				{"NULL", NULL}
-			};
+				{"NULL", NULL}			};
 			oper = strtok(operator, "\n ");
 			for (j = 0; inst[j].opcode; j++)
 			{
@@ -45,4 +43,5 @@ void _read(char *arg1)
 					break;				}
 				if (strncmp("NULL", inst[j] .opcode, 4) == 0)
 					_errinst(nl, oper);		}}
-		nl++;	}}
+		nl++;		}
+	_free(&h, &linestr, &amount, &argv1, &file); }

@@ -6,7 +6,5 @@
  */
 int _retexfail(void)
 {
-	exit(-1);
-	return (EXIT_FAILURE);
-
+	exit(EXIT_FAILURE);
 }

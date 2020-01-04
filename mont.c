@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	{
 		arg1 = strdup(argv[1]);
 		_read(arg1);
+		free(arg1);
 	}
 	return (EXIT_SUCCESS);
 }
