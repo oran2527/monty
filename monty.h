@@ -37,9 +37,6 @@ typedef struct instruction_s
 } instruction_t;
 
 
-void _func(stack_t **h, char *operator, unsigned int nl);
-
-void _pall(stack_t **h, unsigned int nl);
-
+void _read(char *arg1);
 
 #endif
