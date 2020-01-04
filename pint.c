@@ -6,18 +6,17 @@
  */
 void _pint(stack_t **h, unsigned int nl)
 {
-	stack_t *temp;
+	stack_t *t;
 
 	(void)nl;
-	temp = *h;
-	if (temp != NULL)
+	t = *h;
+	if (t != NULL)
 	{
-		printf("%d\n", temp->n);
+		printf("%d\n", t->n);
 	}
 	else
 	{
 		printf("L%u: can't pint, stack empty", nl);
 		_retexfail();
-	}
-	free(temp);
+	}	
 }

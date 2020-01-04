@@ -6,8 +6,7 @@
  */
 int _errfile(char *argv1)
 {
-	printf("Error: Can't open file %s\n", argv1);
-	free(argv1);
+	printf("Error: Can't open file %s\n", argv1);	
 	_retexfail();
 	return (0);
 }
