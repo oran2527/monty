@@ -16,9 +16,7 @@ void _read(char *arg1)
 	argv1 = strdup(arg1);
 	file = fopen(argv1, "r");
 	if (file == NULL)
-	{
-		printf("Error: Can't open file %s", arg1);
-		_retexfail();			}
+		_errfile(argv1);
 	while ((m = getline(&linestr, &line, file)) != -1)
 	{
 		operator = strtok(linestr, " ");
@@ -42,15 +40,9 @@ void _read(char *arg1)
 				if (strcmp(oper, inst[j].opcode) == 0)
 				{
 					inst[j].f(&h, nl);
-					break;
-				}
-					
+					break;				}
 				if (strncmp("NULL", inst[j] .opcode, 4) == 0)
-				{	
+				{
 					printf("L%u: unknown instruction %s\n", nl, oper);
-					_retexfail();
-				}	
-			}				
-		}
-		nl++;	}
-}
+					_retexfail();				}}}
+		nl++;	}}
