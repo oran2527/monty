@@ -6,7 +6,8 @@
  */
 void _s(stack_t **h, unsigned int nl)
 {
-	int i = 0, first = 0, second = 0;
+	stack_t *temp, *temp2, *temp3;
+	int i = 0;
 
 	(void)nl;
 	while (*h != NULL && (*h)->prev != NULL)
@@ -24,9 +25,12 @@ void _s(stack_t **h, unsigned int nl)
 	}
 	else
 	{
-		first = (*h)->n;
-		second = (*h)->prev->n;
-		(*h)->n = second;
-		(*h)->prev->n = first;
+		temp = *h;
+		temp2 = (*h)->prev;
+		temp3 = (*h)->prev->prev;
+		*h = temp2;
+		(*h)->prev = temp;
+		(*h)->prev->prev = temp3;
+		(*h)->next = NULL;
 	}
 }
