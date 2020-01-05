@@ -8,7 +8,7 @@
  */
 stack_t *_push(stack_t **h, char **amount, unsigned int nl)
 {
-	stack_t *new;
+	stack_t *new = NULL;
 	int num;
 
 	new = malloc(sizeof(stack_t));
@@ -38,6 +38,5 @@ stack_t *_push(stack_t **h, char **amount, unsigned int nl)
 		new->prev = *h;
 		*h = new;
 		return (*h);
-	}
-	free(new);
+	}	
 }

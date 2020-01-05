@@ -18,6 +18,5 @@ void _pint(stack_t **h, unsigned int nl)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", nl);
 		_retexfail();
-	}
-	free(t);
+	}	
 }
