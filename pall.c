@@ -7,27 +7,24 @@
 void _pall(stack_t **h, unsigned int nl)
 {
 	stack_t *temp;
-	int i = 0, j = 0;
+	int i = 1, j = 1;
 	
 	(void)nl;
 	temp = *h;
 
-	while (temp->prev != NULL)
+	while (temp->prev != NULL && temp != NULL)
 	{		
 		i++;
 		temp = temp->prev;
 
-	}
-	i++;
+	}	
 
-	printf("valor i %d\n", i);
-	while (temp->next != NULL)
+	while (temp->next != NULL && temp != NULL)
 	{
 		j++;
 		temp = temp->next;
-	}
-	j++;
-
+	}	
+	
 	if (i > 1)
 	{	
 		while (temp->prev != NULL)
@@ -37,8 +34,8 @@ void _pall(stack_t **h, unsigned int nl)
 		}
 		printf("%d\n", temp->n);
 	}
-	if (i == 1)
+	if (i == 1 && temp != NULL)
 	{
-		printf("%d\n", temp->n);
+		printf("%d\n", temp->n);		
 	}
 }

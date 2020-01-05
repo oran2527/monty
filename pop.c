@@ -6,18 +6,28 @@
  */
 void _pop(stack_t **h, unsigned int nl)
 {
-	stack_t *temp;
+	stack_t *temp = NULL;
 	(void)nl;
-
+	
 	if ((*h)->prev != NULL)
-	{
-		temp = (*h)->prev;
+	{		
+		if ((*h)->prev != NULL)
+			temp = (*h)->prev;
 		temp->next = NULL;
 		(*h)->next = NULL;
 		(*h)->prev = NULL;
+		free(*h);		
+		*h = temp;		
+	}
+	if ((*h)->prev == NULL)
+	{
+		return;
+	}
+	if ((*h)->prev == NULL && *h == NULL)
+	{
 		free(*h);
 		*h = temp;
-	}	
+	}
 	if (*h == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", nl);
