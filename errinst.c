@@ -8,7 +8,7 @@
  */
 int _errinst(unsigned int nl, char *oper)
 {
-	printf("L%u: unknown instruction %s\n", nl, oper);
+	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", nl, oper);
 	free(oper);
 	_retexfail();
 	return (0);

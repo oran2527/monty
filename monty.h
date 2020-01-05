@@ -45,6 +45,7 @@ int _errinst(unsigned int nl, char *oper);
 void _pint(stack_t **h, unsigned int nl);
 void _free(stack_t **h, char **linestr, char **amount, char **argv1, FILE **file);
 void _pop(stack_t **h, unsigned int nl);
+void _s(stack_t **h, unsigned int nl);
 
 
 #endif

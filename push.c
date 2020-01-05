@@ -14,13 +14,13 @@ stack_t *_push(stack_t **h, char **amount, unsigned int nl)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		printf("Error: malloc failed\n");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		_retexfail();
 	}
 	num = atoi(*amount);
 	if (num == 0)
 	{
-		printf("L%u: usage: push integer\n", nl);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", nl);
 		_retexfail();
 	}
 	new->n = atoi(*amount);

@@ -14,12 +14,11 @@ void _pop(stack_t **h, unsigned int nl)
 		*h = temp->next;
 		if (temp->next)
 			temp->next->prev = NULL;
-
 		free(temp);
 	}
 	else
 	{
-		printf("L%u: can't pop an empty stack\n", nl);
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", nl);
 		_retexfail();
 	}
 }
